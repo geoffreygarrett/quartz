@@ -2,6 +2,9 @@
 {{ $raw := .RawContent }}
 {{ $page := .Page }}
 
+{{/* Pandoc Markdown Citations */}}
+{{ partial "citations.gtpl" . }}
+
 {{/* Escape slashes for Latex to fix line breaks */}}
 {{$latex := findRE "\\$\\$([^\\$]+)\\$\\$" $content}}
 {{range $latex}}
